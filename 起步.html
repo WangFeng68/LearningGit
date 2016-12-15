@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Git 起步</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.article{font-size: 15px; font-family: Arial, '微软雅黑', '宋体';color: #666;}
+.paragraph{margin-left: 10px;margin-bottom: 10px;}
+.paragraph .title{font-size: 25px;color:black;}
+.paragraph .content{text-indent: 3em;margin-top: 5px;}
+.paragraph .subTitle{text-indent: 3em;font-size: 20px;color:black;margin-top: 5px;}
+.paragraph .subContent{text-indent: 4em;margin-top: 5px;}
+.paragraph .subSubTitle{text-indent: 4em;font-size: 18px;color:black;margin-top: 5px;}
+.paragraph .subSubContent{text-indent: 6em;margin-top: 5px;}
+.paragraph img{margin:5px auto;display:block;border-top: 1px solid #666;border-bottom:1px solid #666;padding: 5px;}
+.paragraph .imgSize{width: 600px;height: 500px;}
+.paragraph .tip{color: blue;font-weight: 700}
+.footer{color: black;margin-right: 10px;float: right;margin-bottom: 20px;border:1px double;}
+.footer span{padding:10px;display: inline-block;}
+.important{font-size: 18px;color:black;margin-top: 20px;text-indent: 3em;font-weight: bold;}
+</style>
+</head>
+<body>
+<div class="article">
+
+<div class="paragraph">
+<div class="title">一、安装Git</div>
+<div class="content">网上有很多安装教程，可以参考。这里使用的是Windows版本的Git，点击这里下载。</div>
+<div class="title">二、基本设置</div>
+<div class="content">安装完成后，通过点击鼠标右键就可以看到新添加了俩个Git命令：Git GUI Here 和 Git Bash Here。这里我们使用命令行工具进行一些Git的基本设置。</div>
+<div class="subTitle">1、用户设置</div>
+<div class="subContent">右击鼠标选择 Git Bash Here，弹出命令窗口，敲入以下命令：
+git config user.name yourName
+git config user.name yourName
+</div>
+<div class="subContent">这是在当前用户环境下设置操作人的用户名和邮箱地址。（配置文件地址是当前用户目录下，比如 C:\Users\Administrator\.gitconfig）</div>
+<div class="subContent">如果要给当前机器的所有用户设置，则使用 --syetem 代替 --global。(配置文件在 git 的安装目录，比如：C:\Program Files\Git\mingw64\etc\gitconfig)</div>
+<div class="subContent">如果要给某个项目单独设置，去掉 --global 就可以了（当前项目的 .git 目录下 <span class = "tip">注意：必须在一个Git版本库中</span>）。</div>
+
+<div class="subTitle">2、编辑器设置</div>
+<div class="subContent">git 默认使用自带 vim 当做编辑器，当你用命令打开文件或者输入很长的提交信息时可能会用到。</div>
+<div class="subContent">这里演示将编辑器设置为系统自带的记事本以及用户自己安装的 sublime 两种编辑器的设置方式。</div>
+<div class="subSubTitle">Ⅰ、记事本</div>
+<div class="subSubContent">系统自带的编辑器很容易进行设置，执行以下命令即可：
+git config core.editor notepad
+</div>
+<div class="subSubTitle">Ⅱ、Sublime</div>
+<div class="subSubContent">设置自己安装的编辑器，需要先将该编辑器的安装路径放到操作系统的环境变量中</div>
+<div class="subSubContent">打开 控制面板-->系统-->高级系统设置-->高级 环境变量-->系统变量 Path变量名 添加：C:\Program Files\Sublime Text 2;</div>
+<div class="subSubContent">接着执行以下命令即可：
+ git config core.editor "sublime_text -w"
+</div>
+<div class="subSubContent">添加 -w 的原因是让 Bash 等待 Sublime 关闭。
+</div>
+
+</div>
+
+
+
+</div>    
+</body>
+</html>

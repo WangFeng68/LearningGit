@@ -1,0 +1,21 @@
+一、sublime 
+
+插件
+1、emmet  快捷输入 html css 文档：http://docs.emmet.io/cheat-sheet/
+
+
+二、PostMan
+
+三、EditPlus
+
+四、NodeJs
+
+五、Git
+
+六、WebStorm
+
+七、Hbulider http://www.dcloud.io/
+
+八、everyThing http://www.voidtools.com/
+
+九、IETester
