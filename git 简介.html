@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Git 简介</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.article{font-size: 15px; font-family: Arial, '微软雅黑', '宋体';color: #666;}
+.paragraph{margin-left: 10px;margin-bottom: 10px;}
+.paragraph .title{font-size: 25px;color:black;}
+.paragraph .content{text-indent: 3em;margin-top: 5px;}
+.paragraph .subTitle{text-indent: 3em;font-size: 20px;color:black;margin-top: 5px;}
+.paragraph .subContent{text-indent: 4em;margin-top: 5px;}
+.paragraph img{margin:5px auto;display:block;border-top: 1px solid #666;border-bottom:1px solid #666;padding: 5px;}
+.paragraph .imgSize{width: 600px;height: 500px;}
+.footer{color: black;margin-right: 10px;float: right;margin-bottom: 20px;border:1px double;}
+.footer span{padding:10px;display: inline-block;}
+</style>
+</head>
+<body>
+<div class="article">
+
+<div class="paragraph">
+<div class="title">一、版本控制引入</div>
+<div class="content">可能我们都会有这样的经历：创建了一个文件，并对它做了多次更改，当我们想回到其中的某一次更改的时候，由于时间太长记不得那次更改的内容，于是我们在每次大的更改的时候，会创建一个文件的副本，然后用副本1、副本2等标记，如下图所示：
+<img src="http://images2015.cnblogs.com/blog/374207/201612/374207-20161214173333464-453311211.png" 
+alt="" />
+</div>
+<div class="content">
+现在我们有了版本控制这种工具，它可以详细的记录你每次更改（必须提交），你可以回退到某个版本，甚至比较两个版本的不同。
+</div>
+</div>
+
+<div class="paragraph">
+<div class="title">二、版本控制种类</div>
+<div class="content">目前主要有两种版本控制的方式：集中式以及分布式
+</div>
+<div>
+<div class="subTitle">1、集中式版本控制系统</div>
+<div class="subContent">像SVN、TFS等版本控制工具就属于集中式版本控制系统。这类系统需要一个中央服务器来存储所有修订的版本以及历史记录等信息。使用者需要连接到这台中央服务器来获取和提交文件。</div>
+<div class="subContent">这类版本控制系统的缺点是单点以及需要一个服务器才可以使用，单点无法保证数据的安全备份，需要一个中央服务器我们则必须安装两套环境（服务器以及本地环境）。</div>
+<div class="subContent"> 服务器环境保存所有项目信息，本地环境只保存当前文件。
+<img class="imgSize" src="http://images2015.cnblogs.com/blog/374207/201612/374207-20161214180637370-417687939.png" alt="" />
+</div>
+
+</div>
+<div class="subTitle">2、分布式版本控制系统</div>
+<div class="subContent">Git就是分布式版本控制系统的代表，它不需要中央服务器就可以工作，每个端都可以当做服务器，并保存所有的信息。</div>
+<div class="subContent">但是大多时候，我们需要与别人协作来完成工作，所以还是需要一个机子作为中央服务器来交换我们的文件。不过这个时候我们本地与服务器所有的东西都是一致的。
+<img class="imgSize" src="http://images2015.cnblogs.com/blog/374207/201612/374207-20161214180703417-112132534.png" alt="" />
+</div>
+</div>
+
+<div class="paragraph">
+<div class="title">三、Git使用场景</div>
+<div class="content">这里我们用使用场景来代替优缺点，因为一个工具不可能适应所有的项目。
+</div>
+<div class="subTitle">1、纯本人使用。</div>
+<div class="subContent">你只要安装一个几十M的安装包，就可以在任何环境（不需要联网）下使用版本控制系统了。这个时候你的机子既当服务器又当客户端。实在不放心，还可以托管代码到公共的Git平台上，比如GitHub。</div>
+<div class="subTitle">2、开源项目。</div>
+<div class="subContent">因为Git本身不支持权限管理，所以很多开源项目使用这套系统就不会有安全方便的顾虑。Git的创始人就是为了让全世界的Linux爱好者可以共同的参与到Liunx系统中,才发明的Git。</div>
+</div>
+
+
+<div class="footer">
+<span>如要转载，请标明原作者，多谢！</span>
+</div>
+
+</div>    
+</body>
+</html>

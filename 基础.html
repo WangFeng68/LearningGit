@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Git 基础</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+.article{font-size: 15px; font-family: Arial, '微软雅黑', '宋体';color: #666;}
+.paragraph{margin-left: 10px;margin-bottom: 10px;}
+.paragraph .title{font-size: 25px;color:black;}
+.paragraph .content{text-indent: 3em;margin-top: 5px;}
+.paragraph .subTitle{text-indent: 3em;font-size: 20px;color:black;margin-top: 5px;}
+.paragraph .subContent{text-indent: 4em;margin-top: 5px;}
+.paragraph img{margin:5px auto;display:block;border-top: 1px solid #666;border-bottom:1px solid #666;padding: 5px;}
+.paragraph .imgSize{width: 600px;height: 500px;}
+.footer{color: black;margin-right: 10px;float: right;margin-bottom: 20px;border:1px double;}
+.footer span{padding:10px;display: inline-block;}
+.important{font-size: 18px;color:black;margin-top: 20px;text-indent: 3em;font-weight: bold;}
+</style>
+</head>
+<body>
+<div class="article">
+
+<div class="paragraph">
+<div class="title">一、存储方式</div>
+<div class="content">如果让我们设计一个版本控制系统，最简单的方式就是每做一次更改就生成一个新的文件。</div>
+<div class="content">	这样的方式太占用空间，所以传统的版本控制系统都是保存一个文件的某个版本的全部内容以及其他版本相对于这个版本的更改，这样就节省了大量的空间。</div>
+<div class="content">不过Git却反其道而行之，采用了类似生成副本的方式保存每一次更改，我们称之为快照。
+	<img src="http://images2015.cnblogs.com/blog/374207/201612/374207-20161214200850245-1569174354.png" alt="" />
+</div>
+<div class="content">如果还有疑惑，下面我们会详细介绍这张图代表的意思。</div>
+</div>
+
+<div class="paragraph">
+<div class="title">二、存储对象类型</div>
+<div class="content">Git中有很多存储对象，这里我们着重讲解其中的三个：Blob（块）、Tree（目录树）、Commit（提交）。
+</div>
+
+
+<div class="subTitle">1、Blob（块）</div>
+<div class="subContent">文件的每个版本对应一个块，块里面只包含每个文件的内容，不包含其他任何信息。
+	 </div>
+	 <div class="subContent">例如 1.txt 文件修改过两次且内容不相同，那在git的版本库中就会生成两个块文件，每次修改对应一个块文件。</div>
+ <div class="subContent">块文件是根据文件内容生成的二进制大对象，相同的文件指向相同的块文件。比如 1.txt 和 2.txt 中的文本内容一模一样，那这两个文件指向同一个块文件。</div>
+<div class="subTitle">2、Tree（目录树）</div>
+<div class="subContent"> 目录树里包含的是当前这个树下的所有文件路径以及子树，从而形成一个完整的目录结构。</div>
+<div class="subContent"> 目录树里有指向块的索引。</div>
+
+<div class="subTitle">3、Commit（提交）</div>
+<div class="subContent">提交里面记录的是每次提交的元数据，包括作者、时间以及提交内容等。</div>
+<div class="subContent">每一个提交对象指向一个树对象，树对象则包含了此次提交后的完整目录信息。</div>
+<div class="subContent">每一个提交对象都有一个父提交，除了第一次提交对象以外。</div>
+<img src="http://images2015.cnblogs.com/blog/374207/201612/374207-20161214204122620-1620167645.png" alt="" />
+
+<div class="content">这张图片的每个Commit就对应着最上面那张图片的版本。这样从 提交 到 树 再到块，一层层的嵌套下去。
+</div>
+<div class="important">下一篇文章我们讲解Git里面是如何构建这张图片的。
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="footer">
+<span>如要转载，请标明原作者，多谢！</span>
+</div>
+
+</div>    
+</body>
+</html>
